@@ -14,6 +14,9 @@ The purpose of the Pencil Kata is to write code to simulate, first coarsely and 
 ## Installation
 Run `npm install` to install dependencies.
 
+## Test
+Run `npm test` to run tests.
+
 ## Usage 
 ```
 var pencil = new Pencil(4);     // pencil.durability = 5
