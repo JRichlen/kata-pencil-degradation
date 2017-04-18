@@ -2,6 +2,10 @@
   "name": "pairing-interview",
   "version": "1.0.0",
   "description": "Project for pairing interview.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jrichlen/kata-pencil-degradation.git"
+  },
   "devDependencies": {
     "mocha": "^3.2.0",
     "chai": "3.5.0"
