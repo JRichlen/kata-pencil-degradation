@@ -5,9 +5,9 @@ The purpose of the Pencil Kata is to write code to simulate, first coarsely and 
 
 ## Tools
 1. NodeJS
-..* NPM
-..* Mocha
-..* Chai [S]
+  * NPM
+  * Mocha
+  * Chai [S]
 2. Code Editor (VS Code)
 
 
@@ -16,8 +16,8 @@ Run `npm install` to install dependencies.
 
 ## Usage 
 ```
-var pencil = new Pencil(4); 	// pencil.durability = 5
+var pencil = new Pencil(4);     // pencil.durability = 5
 var paper = new Paper();
 
 pencil.write('tests', paper);
-console.log(paper.text);		// "test"
+console.log(paper.text);        // "test"
