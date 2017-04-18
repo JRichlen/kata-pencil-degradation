@@ -35,5 +35,12 @@ describe('Pencil', () => {
             pencil.write('tests', paper);
             assert.equal(paper.text, 'test ');
         });
+
+        it('should not degrade the pencil when writing spaces', () => {
+            pencil = new Pencil(4);
+            pencil.write(' test', paper);
+            assert.equal(paper.text, ' test');
+        });
+        
     });
 });
