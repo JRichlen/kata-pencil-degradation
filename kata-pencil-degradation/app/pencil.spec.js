@@ -45,4 +45,14 @@ describe('Pencil', () => {
             assert.equal(paper.text, 'A\n\B\nC\nD');
         });
     });
+
+    
+    describe('.sharpen', () => {
+        it('should sharpen pencil to original durability', () => {
+            pencil.write('tests', paper);
+            pencil.sharpen();
+            pencil.write('123', paper);
+            assert.equal(paper.text, 'test 123');
+        });
+    });
 });

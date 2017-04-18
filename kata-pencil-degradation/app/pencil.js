@@ -1,6 +1,7 @@
 class Pencil {
     constructor(durability) {
         this.durability = durability || 0;
+        this._defaultDurability = durability || 0; 
     }
 
     write(writeStr, paper) {
@@ -22,6 +23,10 @@ class Pencil {
         else {
             return ' ';
         }
+    }
+
+    sharpen() {
+        this.durability = this._defaultDurability;
     }
 }
 module.exports = Pencil;
