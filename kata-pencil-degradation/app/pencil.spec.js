@@ -42,7 +42,12 @@ describe('Pencil', () => {
 
         it('should not degrade the pencil when writing a new line', () => {
             pencil.write('A\nB\nC\nD', paper);
-            assert.equal(paper.text, 'A\n\B\nC\nD');
+            assert.equal(paper.text, 'A\n\B\n \n ');
+        });
+
+        it('should degrade twice as fast when writing capital letters', () => {
+            pencil.write('ABCD', paper);
+            assert.equal(paper.text, 'AB  ');
         });
     });
 
@@ -51,8 +56,8 @@ describe('Pencil', () => {
         it('should sharpen pencil to original durability', () => {
             pencil.write('tests', paper);
             pencil.sharpen();
-            pencil.write('123', paper);
-            assert.equal(paper.text, 'test 123');
+            pencil.write('it', paper);
+            assert.equal(paper.text, 'test it');
         });
     });
 });

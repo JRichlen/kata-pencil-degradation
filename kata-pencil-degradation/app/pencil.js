@@ -16,8 +16,12 @@ class Pencil {
     }
 
     _degrade(character) {
-        if (this.durability && character !== ' ') {
-            if (character !== '\n') this.durability--;
+        var durabilityRequired = (character == character.toUpperCase()) ? 2 : 1;
+        if (character === '\n') {
+            return character;
+        }
+        else if (this.durability >= durabilityRequired && character !== ' ') {
+            this.durability -= durabilityRequired;
             return character;
         }
         else {
