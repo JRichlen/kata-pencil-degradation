@@ -41,6 +41,12 @@ describe('Pencil', () => {
             pencil.write(' test', paper);
             assert.equal(paper.text, ' test');
         });
+
+        it('should not degrade the pencil when writing a new line', () => {
+            pencil = new Pencil(4);
+            pencil.write('A\nB\nC\nD', paper);
+            assert.equal(paper.text, 'A\n\B\nC\nD');
+        });
         
     });
 });

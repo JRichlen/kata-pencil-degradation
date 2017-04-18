@@ -16,7 +16,7 @@ class Pencil {
 
     _degrade(character) {
         if (this.durability && character !== ' ') {
-            this.durability--;
+            if (character !== '\n') this.durability--;
             return character;
         }
         else {
