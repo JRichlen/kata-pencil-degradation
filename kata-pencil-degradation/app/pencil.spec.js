@@ -10,7 +10,7 @@ describe('Pencil', () => {
     var paper;
 
     beforeEach(() => {
-        pencil = new Pencil(20);
+        pencil = new Pencil(4);
         paper = new Paper();
     });
 
@@ -19,7 +19,7 @@ describe('Pencil', () => {
     });
 
     it('should have a durability property', () => {
-        assert.equal(pencil.durability, 20); 
+        assert.equal(pencil.durability, 4); 
     });
 
     describe('.write()', () => {
@@ -31,22 +31,18 @@ describe('Pencil', () => {
 
     describe('._degrade()', () => {
         it('should degrade the pencil when it writes', () => {
-            pencil = new Pencil(4);
             pencil.write('tests', paper);
             assert.equal(paper.text, 'test ');
         });
 
         it('should not degrade the pencil when writing spaces', () => {
-            pencil = new Pencil(4);
             pencil.write(' test', paper);
             assert.equal(paper.text, ' test');
         });
 
         it('should not degrade the pencil when writing a new line', () => {
-            pencil = new Pencil(4);
             pencil.write('A\nB\nC\nD', paper);
             assert.equal(paper.text, 'A\n\B\nC\nD');
         });
-        
     });
 });
