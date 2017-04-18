@@ -5,9 +5,9 @@ The purpose of the Pencil Kata is to write code to simulate, first coarsely and 
 
 ## Tools
 1. NodeJS
-  * NPM
-  * Mocha
-  * Chai [S]
+	* NPM
+	* Mocha
+	* Chai
 2. Code Editor (VS Code)
 
 
