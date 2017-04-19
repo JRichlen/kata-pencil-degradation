@@ -48,6 +48,7 @@ class Pencil {
         var start = length + index -1;
         var stop = index;
         if (index > -1) {
+            paper.editPosition = index;
             for(var i = start ; i >= stop ; i--) {
                 if (this.eraserDurability  && /\S/.test(text[i])) {
                     text[i] = ' ';
@@ -57,6 +58,10 @@ class Pencil {
             text = text.join('');
             paper.text = text;
         }
+    }
+
+    edit(writeStr, paper) {
+        paper.acceptText(writeStr, true);
     }
 }
 module.exports = Pencil;

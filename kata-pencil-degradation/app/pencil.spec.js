@@ -110,6 +110,10 @@ describe('Pencil', () => {
             pencil.write('This is a test.', paper);
             pencil.erase('is a', paper);
         });
-        
+
+        it('should write over the erased whitespace', () => {
+            pencil.edit('abc', paper);
+            assert.equal(paper.text, 'This abc  test.');
+        });
     });
 });
