@@ -10,7 +10,7 @@ describe('Pencil', () => {
     var paper;
 
     beforeEach(() => {
-        pencil = new Pencil(4);
+        pencil = new Pencil(4, 2);
         paper = new Paper();
     });
 
@@ -20,6 +20,10 @@ describe('Pencil', () => {
 
     it('should have a durability property', () => {
         assert.equal(pencil.durability, 4); 
+    });
+    
+    it('should have a length property', () => {
+        assert.equal(pencil.length, 2);
     });
 
     describe('.write()', () => {

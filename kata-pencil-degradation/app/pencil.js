@@ -1,7 +1,8 @@
 class Pencil {
-    constructor(durability) {
+    constructor(durability, length) {
         this.durability = durability || 0;
-        this._defaultDurability = durability || 0; 
+        this._defaultDurability = durability || 0;
+        this.length = length;
     }
 
     write(writeStr, paper) {

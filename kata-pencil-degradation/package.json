@@ -12,7 +12,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "mocha **/*.spec.js"
+    "test": "mocha --watch **/*.spec.js"
   },
   "author": "Jordan Richlen",
   "license": "MIT"
