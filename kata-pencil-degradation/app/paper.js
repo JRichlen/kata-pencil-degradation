@@ -11,7 +11,12 @@ class Paper {
                 var paperText = this.text.split('');
                 var text = text.split('');
                 for(var j = 0; j < text.length; j++) {
-                    paperText[this.editPosition] = text[j];
+                    if (paperText[this.editPosition] === ' ') {
+                        paperText[this.editPosition] = text[j];
+                    }
+                    else {
+                        paperText[this.editPosition] = '@';
+                    }
                     this.editPosition++;
                 }
                 this.text = paperText.join('');

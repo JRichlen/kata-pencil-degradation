@@ -114,6 +114,11 @@ describe('Pencil', () => {
         it('should write over the erased whitespace', () => {
             pencil.edit('abc', paper);
             assert.equal(paper.text, 'This abc  test.');
+        });                            
+
+        it('should write over existing text with @', () => {
+            pencil.edit('is cool.', paper);
+            assert.equal(paper.text, 'This is co@@@t.');
         });
     });
 });
