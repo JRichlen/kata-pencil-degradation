@@ -39,5 +39,19 @@ class Pencil {
             this.durability = 0; 
         }
     } 
+
+    erase(eraseStr, paper) {
+        var index = paper.text.lastIndexOf(eraseStr);
+        var length = eraseStr.length;
+        var text = paper.text.split('');
+        if (index > -1) {
+            for(var i = index; i < length + index; i++) {
+                 text[i] = ' ';
+            }
+            text = text.join('');
+            paper.text = text;
+        }
+
+    }
 }
 module.exports = Pencil;

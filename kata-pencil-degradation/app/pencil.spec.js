@@ -77,4 +77,15 @@ describe('Pencil', () => {
             assert.equal(paper.text, '    ');
         });
     });
+
+    describe('.erase()', () => {
+        beforeEach(() => {
+            pencil = new Pencil(100, 2, 1);
+        });
+        it('should erase the last instance of a string from a paper', () => {
+            pencil.write('This is a test.', paper);
+            pencil.erase('is', paper);
+            assert.equal(paper.text, 'This    a test.');
+        })
+    });
 });
