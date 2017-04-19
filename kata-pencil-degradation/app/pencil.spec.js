@@ -63,5 +63,10 @@ describe('Pencil', () => {
             pencil.write('it', paper);
             assert.equal(paper.text, 'test it');
         });
+
+        it('should decrease the pencils length', () => {
+            pencil.sharpen();
+            assert.equal(pencil.length, 1);
+        });
     });
 });

@@ -32,6 +32,7 @@ class Pencil {
 
     sharpen() {
         this.durability = this._defaultDurability;
+        this.length--;
     }
 }
 module.exports = Pencil;
