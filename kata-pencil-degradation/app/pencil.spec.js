@@ -103,4 +103,13 @@ describe('Pencil', () => {
             assert.equal(paper.text, 'This      test.');
         });
     });
+
+    describe('.edit()', () => {
+        beforeEach(() => {
+            pencil = new Pencil(100, 2, 3);
+            pencil.write('This is a test.', paper);
+            pencil.erase('is a', paper);
+        });
+        
+    });
 });

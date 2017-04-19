@@ -19,4 +19,10 @@ describe('Paper', () => {
         paper.acceptText('test');
         assert.equal(paper.text, 'test');
    });
+
+   it('should acceptText in specific position', () => {
+        paper.acceptText('This is a test.');
+        paper.acceptText('@', 5);
+        assert.equal(paper.text, 'This @s a test.');
+   });
 });
