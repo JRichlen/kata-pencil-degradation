@@ -95,5 +95,12 @@ describe('Pencil', () => {
             pencil.erase('test', paper);
             assert.equal(paper.text, 'This    a tes .');
         });
+
+        it('should not try to erase whitespace', () => {
+            pencil.write('This is a test.', paper);
+            pencil.erase('is a', paper);
+            pencil.erase('test', paper);
+            assert.equal(paper.text, 'This      test.');
+        });
     });
 });

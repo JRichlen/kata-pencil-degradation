@@ -49,7 +49,7 @@ class Pencil {
         var stop = index;
         if (index > -1) {
             for(var i = start ; i >= stop ; i--) {
-                if (this.eraserDurability) {
+                if (this.eraserDurability  && /\S/.test(text[i])) {
                     text[i] = ' ';
                     this.eraserDurability--;
                 }
