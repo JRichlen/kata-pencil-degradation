@@ -1,8 +1,9 @@
 class Pencil {
-    constructor(durability, length) {
+    constructor(durability, length, eraserDurability) {
         this.durability = durability || 0;
         this._defaultDurability = durability || 0;
         this.length = length;
+        this.eraserDurability = eraserDurability
     }
 
     write(writeStr, paper) {
@@ -44,14 +45,18 @@ class Pencil {
         var index = paper.text.lastIndexOf(eraseStr);
         var length = eraseStr.length;
         var text = paper.text.split('');
+        var start = length + index -1;
+        var stop = index;
         if (index > -1) {
-            for(var i = index; i < length + index; i++) {
-                 text[i] = ' ';
+            for(var i = start ; i >= stop ; i--) {
+                if (this.eraserDurability) {
+                    text[i] = ' ';
+                    this.eraserDurability--;
+                }
             }
             text = text.join('');
             paper.text = text;
         }
-
     }
 }
 module.exports = Pencil;

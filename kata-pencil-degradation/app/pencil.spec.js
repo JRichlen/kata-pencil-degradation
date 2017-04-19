@@ -80,12 +80,20 @@ describe('Pencil', () => {
 
     describe('.erase()', () => {
         beforeEach(() => {
-            pencil = new Pencil(100, 2, 1);
+            pencil = new Pencil(100, 2, 3);
         });
+
         it('should erase the last instance of a string from a paper', () => {
             pencil.write('This is a test.', paper);
             pencil.erase('is', paper);
             assert.equal(paper.text, 'This    a test.');
-        })
+        });
+
+        it('should not erase if eraser is worn out', () => {
+            pencil.write('This is a test.', paper);
+            pencil.erase('is', paper);
+            pencil.erase('test', paper);
+            assert.equal(paper.text, 'This    a tes .');
+        });
     });
 });
