@@ -68,5 +68,13 @@ describe('Pencil', () => {
             pencil.sharpen();
             assert.equal(pencil.length, 1);
         });
+
+        it('should not sharpen to original durability if the pencil is used up', () => {
+            pencil.sharpen();
+            pencil.sharpen();
+            pencil.sharpen();
+            pencil.write('test', paper);
+            assert.equal(paper.text, '    ');
+        });
     });
 });

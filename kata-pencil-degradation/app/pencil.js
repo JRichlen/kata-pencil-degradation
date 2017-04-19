@@ -31,8 +31,13 @@ class Pencil {
     }
 
     sharpen() {
-        this.durability = this._defaultDurability;
-        this.length--;
-    }
+        if (this.length) {
+            this.durability = this._defaultDurability;
+            this.length--;
+        }
+        else {
+            this.durability = 0; 
+        }
+    } 
 }
 module.exports = Pencil;
